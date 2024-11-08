@@ -171,7 +171,7 @@ static void mp_machine_lightsleep(size_t n_args, const mp_obj_t *args) {
         if (use_timer_alarm) {
             // Make sure ALARM3/IRQ3 is enabled on _this_ core
             timer_hw->inte |= 1 << 3;
-            if (timer3_enabled == false) {
+            if (!timer3_enabled) {
                 irq_set_enabled(3, true);
             }
             // Use timer alarm to wake.
@@ -184,7 +184,7 @@ static void mp_machine_lightsleep(size_t n_args, const mp_obj_t *args) {
         scb_hw->scr |= M0PLUS_SCR_SLEEPDEEP_BITS;
         __wfi();
         scb_hw->scr &= ~M0PLUS_SCR_SLEEPDEEP_BITS;
-        if (timer3_enabled == false) {
+        if (!timer3_enabled) {
             irq_set_enabled(3, false);
         }
         clocks_hw->sleep_en0 = sleep_en0;
