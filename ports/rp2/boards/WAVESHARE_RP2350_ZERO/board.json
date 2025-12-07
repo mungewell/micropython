@@ -1,0 +1,22 @@
+{
+    "deploy": [
+        "../deploy.md"
+    ],
+    "docs": "",
+    "features": [
+        "Dual-core",
+        "External Flash",
+        "USB"
+    ],
+    "images": [
+        "rp2-pico2.jpg"
+    ],
+    "mcu": "rp2350",
+    "product": "RP2350-Zero",
+    "thumbnail": "",
+    "url": "https://www.waveshare.com/wiki/RP2350-Zero",
+    "variants": {
+        "RISCV": "RISC-V CPU mode"
+    },
+    "vendor": "WaveShare"
+}
